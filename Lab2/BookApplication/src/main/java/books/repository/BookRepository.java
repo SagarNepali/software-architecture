@@ -2,6 +2,7 @@ package books.repository;
 
 import books.domain.Book;
 
+import java.util.Collection;
 import java.util.List;
 
 public interface BookRepository {
@@ -10,5 +11,5 @@ public interface BookRepository {
     Book update(Book book);
     void delete(String isbn);
     Book get(String isbn);
-    List<Book> getAll();
+    Collection<Book> getAll();
 }

@@ -5,6 +5,7 @@ import books.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -29,7 +30,7 @@ public class BookService {
         return bookRepository.get(isbn);
     }
 
-    public List<Book> getAllBooks() {
+    public Collection<Book> getAllBooks() {
         return bookRepository.getAll();
     }
 

@@ -4,12 +4,14 @@ import books.domain.Book;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 @Repository
 public class BookRepositoryImpl implements BookRepository {
 
-    private static List<Book> books;
+    private static Collection<Book> books;
 
 
     static {
@@ -53,7 +55,7 @@ public class BookRepositoryImpl implements BookRepository {
     }
 
     @Override
-    public List<Book> getAll() {
+    public Collection<Book> getAll() {
         return books;
     }
 }
