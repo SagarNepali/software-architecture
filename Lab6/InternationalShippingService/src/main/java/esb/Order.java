@@ -4,18 +4,13 @@ public class Order {
 	private String orderNumber;
 	private double amount;
 
-	private OrderType orderType;
-
-	public enum OrderType {
-		INTERNATIONAL,
-		DOMESTIC
+	public Order() {
 	}
 
-	public Order(String orderNumber, double amount, OrderType orderType) {
+	public Order(String orderNumber, double amount) {
 		super();
 		this.orderNumber = orderNumber;
 		this.amount = amount;
-		this.orderType = orderType;
 	}
 
 	public String getOrderNumber() {

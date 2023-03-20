@@ -27,7 +27,8 @@ public class ESBApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		restTemplate.postForLocation("http://localhost:8080/orders", new Order("334", 120.0));
-		restTemplate.postForLocation("http://localhost:8080/orders", new Order("355", 185.0));
+		restTemplate.postForLocation("http://localhost:8080/orders", new Order("334", 120.0, Order.OrderType.DOMESTIC));
+		restTemplate.postForLocation("http://localhost:8080/orders", new Order("355", 185.0, Order.OrderType.DOMESTIC));
+		restTemplate.postForLocation("http://localhost:8080/orders", new Order("356", 1185.0, Order.OrderType.INTERNATIONAL));
 	}
 }

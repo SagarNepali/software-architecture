@@ -11,16 +11,26 @@
 	<channel id="shippingchannel"/>
 	<channel id="nextdayshippingchannel"/>
 	<channel id="normalshippingchannel"/>
+	<channel id="ordertypechannel"/>
 
 	<service-activator input-channel="wharehousechannel"
-	                   output-channel="shippingchannel"
+	                   output-channel="ordertypechannel"
 	                   ref="warehouseservice"
 	                   method="checkStock"/>
 
 	<router method="route"
-			input-channel="shippingchannel">
+			input-channel="domesticshippingchannel">
 		<beans:bean class="esb.ShippingRouter" />
 	</router>
+
+	<router method="orderType"
+		input-channel="ordertypechannel">
+		<beans:bean class="esb.OrderTypeRouter"/>
+	</router>
+
+	<service-activator input-channel="internationalshippingchannel">
+		<beans:bean class="esb.InternationalShippingActivator" />
+	</service-activator>
 
 	<service-activator input-channel="normalshippingchannel">
 		<beans:bean class="esb.NormalShippingActivator" />

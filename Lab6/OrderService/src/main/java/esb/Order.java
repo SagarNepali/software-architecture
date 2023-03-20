@@ -3,11 +3,18 @@ package esb;
 public class Order {
 	private String orderNumber;
 	private double amount;
+	private OrderType orderType;
 
-	public Order(String orderNumber, double amount) {
+	public enum OrderType {
+		INTERNATIONAL,
+		DOMESTIC
+	}
+
+	public Order(String orderNumber, double amount, OrderType orderType) {
 		super();
 		this.orderNumber = orderNumber;
 		this.amount = amount;
+		this.orderType = orderType;
 	}
 
 	public String getOrderNumber() {
@@ -30,4 +37,11 @@ public class Order {
 		return "order: nr="+orderNumber+" amount="+amount;
 	}
 
+	public OrderType getOrderType() {
+		return orderType;
+	}
+
+	public void setOrderType(OrderType orderType) {
+		this.orderType = orderType;
+	}
 }
