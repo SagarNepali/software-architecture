@@ -11,6 +11,6 @@ public class NormalShippingActivator {
 
     public void ship(Order order) {
         System.out.println("Normal day shipping: "+ order.toString());
-        restTemplate.postForLocation("http://localhost:8081/orders", order);
+        restTemplate.postForLocation("http://localhost:8082/orders", order);
     }
 }
