@@ -8,13 +8,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RefreshScope
 public class ServiceAController {
-  
+
   @Value("${greeting}")
+  private String greeting;
+
+  @Value("${message}")
   private String message;
-  
+
   @RequestMapping("/")
   public String getName() {
-    return message;
+    return message+" , "+greeting;
   }
 }
 
